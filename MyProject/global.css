@@ -1,0 +1,9 @@
+body{
+    padding:0;
+    margin:0;
+    font-family: sinminsang;
+}
+@font-face{
+    font-family: "sinminsang";
+    src: url("/font/sinminsang.ttf") format("truetype")
+}
