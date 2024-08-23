@@ -11,13 +11,13 @@ export default function LoadingScreen() {
     GowunBatang: require('./assets/fonts/GowunBatang.ttf'),
   });
 
-  const [isLoading, setIsLoading] = useState(true);  // 로딩 상태 설정
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // 로딩 프로세스를 시뮬레이션 (예: 데이터 또는 자산을 가져오기)
     const loadApp = setTimeout(() => {
       setIsLoading(false);
-      navigation.navigate('Main');  // 3초 후 로딩 상태를 false로 설정
+      navigation.navigate('Recording');  // 3초 후 로딩 상태를 false로 설정
     }, 3000);  // 3초 동안 로딩
 
     return () => clearTimeout(loadApp);  // 컴포넌트 언마운트 시 타이머 정리
@@ -37,8 +37,10 @@ export default function LoadingScreen() {
     >
 
       <View style={styles.container}>
+        <View style={styles.body}>
         <Text style={styles.titleText}>내 생에 가장 소중한 기록,</Text>
-        <Text style={styles.mainText}>인생일기.</Text>
+        <Text style={styles.mainText}>인생일기</Text>
+        </View>
         <Image
           source={require('./assets/silver.png')}  // 하단의 그림 이미지 경로
           style={styles.image}
@@ -61,25 +63,39 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingTop: 45,
+    paddingHorizontal: 20,
+    backgroundColor: '#fff',
+  },
+  title: {
+    fontSize: 24,
+    fontFamily: 'GowunBatangBold',
+  },
+  body:{
+    position:'absolute',
+    top: 200
+  },
   titleText: {
     fontFamily: 'GowunBatang',
-    fontSize: 30,
+    fontSize: 26,
     textAlign: 'center',
     color: '#000',
     marginBottom: 0,
   },
   mainText: {
     fontFamily: 'GowunBatangBold',
-    fontSize: 40,
+    fontSize: 80,
+    letterSpacing: 5,
     textAlign: 'center',
-    color: '#000',
     marginBottom: 20,
   },
   image: {
-    marginTop: 150,
-    marginBottom: -250,
-    width: 500,  // 필요에 따라 크기 조정
-    height: 200,
-    resizeMode: 'contain',
+    position:'absolute',
+    bottom:80,
+    width: 400,  // 필요에 따라 크기 조정
+    height: 280,
   },
 });

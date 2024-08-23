@@ -13,6 +13,8 @@
     "@react-navigation/native": "^6.1.18",
     "@react-navigation/native-stack": "^6.11.0",
     "expo": "~51.0.28",
+    "expo-camera": "~15.0.14",
+    "expo-cli": "^6.3.10",
     "expo-status-bar": "~1.12.1",
     "next": "^14.2.5",
     "react": "^18.2.0",

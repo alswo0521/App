@@ -3,7 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MainScreen from './MainScreen';  // 메인 화면 컴포넌트
 import LoadingScreen from './LoadingScreen';  // 로딩 화면 컴포넌트
-
+import SignupScreen from './SignupScreen';
+import RecordingScreen from './RecordingScreen';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -18,6 +19,16 @@ export default function App() {
         <Stack.Screen 
           name="Loading" 
           component={LoadingScreen}
+          options={{headerShown:false}}
+        />
+        <Stack.Screen 
+          name="Signup" 
+          component={SignupScreen}
+          options={{headerShown:false}}
+        />
+        <Stack.Screen 
+          name="Recording" 
+          component={RecordingScreen}
           options={{headerShown:false}}
         />
       </Stack.Navigator>
